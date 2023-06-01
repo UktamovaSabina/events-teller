@@ -1,0 +1,92 @@
+/speakers:
+  get:
+    tags:
+      - speakers
+    description: returns all speakers
+    responses:
+      '200':
+        description: all speakers
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpeakersResponse'
+  post:
+    tags:
+      - speakers
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SpeakerPost'
+        required: true
+    responses:
+      '201':
+        description: successfully created speaker
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpeakerResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+    security:
+        - Bearer:
+            type: oauth2
+
+/speakers/{id}:
+  put:
+    tags:
+      - speakers
+    parameters: 
+      - name: id
+        in: path
+        required: true
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SpeakerPut'
+        required: true
+    responses:
+      '200':
+        description: successfully updated speaker
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpeakerResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+    security:
+        - Bearer:
+            type: oauth2
+
+  delete:
+    tags:
+      - speakers
+    parameters: 
+      - name: id
+        in: path
+        required: true
+    responses:
+      '200':
+        description: successfully deleted speaker
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpeakerResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+    security:
+        - Bearer:
+            type: oauth2

@@ -1,0 +1,37 @@
+/category:
+  get:
+    tags:
+      - categories
+    description: returns all categories
+    responses:
+      '200':
+        description: all categories
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+
+/subcategory:
+  get:
+    tags:
+      - sub-categories
+    description: returns all sub-categories
+    responses:
+      '200':
+        description: all sub-categories
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubCategoryResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'

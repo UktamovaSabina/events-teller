@@ -1,0 +1,149 @@
+/posts/public:
+  get:
+    tags:
+      - posts
+    parameters: 
+      - name: title
+        in: query
+      - name: page
+        in: query
+      - name: limit
+        in: query
+    description: returns all public (confirmed) posts with pagination || default limit is 10, page is 1
+    responses:
+      '200':
+        description: all public (confirmed) posts
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostsResponse'
+
+/posts:
+  get:
+    tags:
+      - posts
+    description: returns all posts
+    responses:
+      '200':
+        description: all posts
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostsResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+    security:
+        - Bearer:
+            type: oauth2
+
+  post:
+    tags:
+      - posts
+    description: craete a post
+    requestBody:
+      content:
+        multipart/form-data:
+          schema:
+            $ref: '#/components/schemas/CreatePost'
+        required: true
+    responses:
+      '201':
+        description: successfully created post
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SinglePostResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+    security:
+        - Bearer:
+            type: oauth2
+
+    
+
+/posts/{id}:
+  get:
+    tags:
+      - posts
+    parameters: 
+      - name: id
+        in: path
+        required: true
+    description: returns single post
+    responses:
+      '200':
+        description: single post
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SinglePostResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+
+  put:
+    tags:
+      - posts
+    parameters: 
+      - name: id
+        in: path
+        required: true
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PostPut'
+        required: true
+    responses:
+      '200':
+        description: successfully updated post
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SinglePostResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+    security:
+        - Bearer:
+            type: oauth2
+
+  delete:
+    tags:
+      - posts
+    parameters: 
+      - name: id
+        in: path
+        required: true
+    responses:
+      '200':
+        description: successfully deleted post
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SinglePostResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+    security:
+        - Bearer:
+            type: oauth2
+  
+    

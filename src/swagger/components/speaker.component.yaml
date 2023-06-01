@@ -1,0 +1,61 @@
+components:
+  schemas:
+    SpeakersResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              speaker_id: 
+                type: integer
+              speaker_fullname:
+                type: string
+              speaker_prof:
+                type: string
+              phone_number:
+                type: string
+
+    SpeakerPost:
+      type: object
+      properties:
+        speaker_fullname:
+          type: string
+        speaker_prof:
+          type: string
+        phone_number:
+          type: string
+
+    SpeakerResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+          properties:
+            speaker_id: 
+              type: integer
+            speaker_fullname:
+              type: string
+            speaker_prof:
+              type: string
+            phone_number:
+              type: string
+
+    SpeakerPut:
+      type: object
+      properties:
+        speaker_fullname:
+          type: string
+        speaker_prof:
+          type: string
+        phone_number:
+          type: string

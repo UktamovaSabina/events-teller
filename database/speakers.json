@@ -1,0 +1,32 @@
+[
+    {
+        "speaker_id": 1,
+        "speaker_fullname": "Sabina Uktamova",
+        "speaker_prof": "developer",
+        "phone_number": "+998911111111"
+    },
+    {
+        "speaker_id": 2,
+        "speaker_fullname": "Dinara Ubaydullayeva",
+        "speaker_prof": "product designer",
+        "phone_number": "+998922222222"
+    },
+    {
+        "speaker_id": 3,
+        "speaker_fullname": "Hikmat Radjabov",
+        "speaker_prof": "Biznesman",
+        "phone_number": "+998434380303"
+    },
+    {
+        "speaker_id": 4,
+        "speaker_fullname": "Hikmat Radjabov",
+        "speaker_prof": "developer",
+        "phone_number": "+998993334492"
+    },
+    {
+        "speaker_id": 5,
+        "speaker_fullname": "Marjona Xoliyorova",
+        "speaker_prof": "teacher",
+        "phone_number": "+998334445566"
+    }
+]

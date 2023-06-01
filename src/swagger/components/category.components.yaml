@@ -1,0 +1,46 @@
+components:
+  schemas:
+    CategoryResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              category_id: 
+                type: integer
+              category_name:
+                type: string
+              sub_categories:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    sub_category_id:
+                      type: integer
+                    sub_category_name:
+                      type: string
+
+    SubCategoryResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              sub_category_id: 
+                type: integer
+              sub_category_name:
+                type: string
+              category_id:
+                type: integer

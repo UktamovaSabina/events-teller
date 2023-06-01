@@ -1,0 +1,108 @@
+components:
+  schemas:
+    PostsResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              post_id: 
+                type: integer
+              title:
+                type: string
+              desc:
+                type: string
+              text:
+                type: string
+              image:
+                type: string
+              sub_category_id:
+                type: integer
+              speaker_id:
+                type: integer
+              type:
+                type: string
+              status:
+                type: integer
+              created_date:
+                type: string
+              created_time:
+                type: string
+
+    SinglePostResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+          properties:
+            post_id: 
+              type: integer
+            title:
+              type: string
+            desc:
+              type: string
+            text:
+              type: string
+            image:
+              type: string
+            sub_category_id:
+              type: integer
+            speaker_id:
+              type: integer
+            type:
+              type: string
+            status:
+              type: integer
+            created_date:
+              type: string
+            created_time:
+              type: string
+
+    CreatePost:
+      type: object
+      properties:
+        title:
+          type: string
+        desc:
+          type: string
+        text:
+          type: string
+        image:
+          type: string
+          format: binary
+        sub_category_id:
+          type: integer
+        speaker_id:
+          type: integer
+        type:
+          type: string
+          example: online
+        status:
+          type: integer
+          example: confirmed
+
+    PostPut:
+      type: object
+      properties:
+        title:
+          type: string
+        desc:
+          type: string
+        text:
+          type: string
+        type:
+          type: string
+          example: online
+        status:
+          type: integer
+          example: confirmed   

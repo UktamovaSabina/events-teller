@@ -1,0 +1,61 @@
+/admins:
+  get:
+    tags:
+      - admins
+    description: returns all registered admins
+    responses:
+      '200':
+        description: all admins
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Response'
+
+/login:
+  post:
+    tags:
+      - admins
+    description: logging in admin
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LoginRegister'
+    responses:
+      '200':
+        description: admin successfully logged in
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRegisterResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
+
+/register:
+  post:
+    tags:
+      - admins
+    description: register admin
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LoginRegister'
+        required: true
+    responses:
+      '201':
+        description: register admin
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRegisterResponse'
+      '400':
+        description: error message
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErrorResponse'
